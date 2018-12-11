@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <style>
+    * {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrap {
+      width: 100%;
+    }
+
+    .menu_tab {
+      width: 1200px;
+      margin: 20px auto;
+    }
+
+    .menu_tab ul {
+      font-size: 0;
+    }
+
+    .menu_tab ul li {
+      width: 50%;
+      border: 1px solid pink;
+      display: inline-block;
+      font-size: 30px;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .tab {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .tab ul {
+      font-size: 0;
+    }
+
+    .tab ul li {
+      width: calc(100% / 3);
+      border: 1px solid #d5d5d5;
+      font-size: 20px;
+      display: inline-block;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    .pick {
+      background: pink;
+      color: #fff;
+    }
+
+    .tab {
+      display: none;
+    }
+
+    .single {
+      display: block;
+    }
+  </style>
+
+  <div class="wrap">
+    <div class="menu_tab">
+      <ul>
+        <li class="pick" data-id="single">치킨</li>
+        <li class="" data-id="set">떡볶이</li>
+      </ul>
+    </div>
+    <div class="single tab" id="single">
+      <ul>
+        <li>뿌링클</li>
+        <li>자메이카치킨</li>
+        <li>호식이</li>
+      </ul>
+    </div>
+    <div class="set tab" id="set">
+      <ul>
+        <li>청년다방</li>
+        <li>신전떡볶이</li>
+        <li>엽떡</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      var tab = $(".menu_tab > ul > li");
+      var cl_tab = $(".tab");
+      var data = null;
+
+      tab.on("click", function () {
+        $(this).addClass('pick').siblings().removeClass('pick');
+        data = $(this).attr("data-id");
+        cl_tab.css("display", "none");
+        $("#" + data).css("display", "block");
+      });
+    });
+  </script>
+</body>
+
+</html>
