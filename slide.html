@@ -23,6 +23,9 @@
       width: 100px;
       height: 100px;
       border: 1px solid;
+    }
+
+    .slide .slide_wr {
       position: relative;
     }
 
@@ -31,6 +34,7 @@
       width: 300px;
       position: absolute;
       top: 0;
+      left: 0;
     }
 
     .slide>.slide_wr>ul>li {
@@ -38,17 +42,50 @@
       font-size: 13px;
     }
   </style>
+  <i class="fa fa-angle-left" style="font-size:30px;" id="prv"></i>
   <div class="slide">
     <div class="slide_wr">
-      <i class="fa fa-angle-left" style="font-size:30px;"></i>
       <ul>
         <li style="width:100px;height:100px;background:red">이미지1</li>
         <li style="width:100px;height:100px;background:pink">이미지2</li>
         <li style="width:100px;height:100px;background:yellow">이미지3</li>
       </ul>
-      <i class="fa fa-angle-right" style="font-size:30px;"></i>
     </div>
   </div>
+  <i class="fa fa-angle-right" style="font-size:30px;" id="next"></i>
+
+  <script>
+    $(document).ready(function () {
+      var list = $('.slide_wr > ul');
+      var li_width = $('.slide > .slide_wr > ul li').css('width');
+      var length = $('.slide_wr > ul > li').length;
+      var count = 1;
+
+      function prv() {
+        count--;
+        var value_prv = parseInt(li_width) * count;
+        console.log(count);
+        console.log(value_prv);
+        list.animate({
+          left: '+=' + value_prv + 'px'
+        });
+
+      }
+      function next() {
+        var value = parseInt(li_width) * count;
+        list.animate({
+          left: '-=' + value + 'px'
+        });
+        count++;
+
+        console.log(count);
+      }
+
+      $('#next').on('click', next);
+      $('#prv').on('click', prv);
+
+    });
+  </script>
 </body>
 
 </html>
