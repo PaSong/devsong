@@ -59,7 +59,7 @@
       var list = $('.slide_wr > ul');
       var li_width = $('.slide > .slide_wr > ul li').css('width');
       var length = $('.slide_wr > ul > li').length;
-      var count = 0;
+      var count = 1;
 
       function prv() {
         if (count > 0) {
@@ -69,11 +69,12 @@
             left: - value * count
           });
         }
+        console.log(count);
       }
       function next() {
-        if (count < li_width.length - 1) {
+        if (count < li_width.length - 2) {
           var value = parseInt(li_width);
-          list.animate({
+          list.stop().animate({
             left: -value * count
           });
           count++;
