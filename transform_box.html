@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .wrap {
+      width: 100%;
+    }
+
+    .contain {
+      width: 1200px;
+      margin: 0 auto;
+      font-size: 0;
+    }
+
+
+    .box {
+      width: calc(100% / 3);
+      height: 600px;
+      display: inline-block;
+      font-size: 15px;
+      text-align: center;
+      position: relative;
+    }
+
+    .box>div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .box>div>p {
+      border: 1px solid;
+      border-radius: 5px 5px 5px 5px;
+      padding: 5px 10px;
+    }
+
+    .contain .camping {
+      background: pink;
+    }
+
+    .contain .glamping {
+      background: yellow;
+    }
+
+    .contain .hotel {
+      background: aqua;
+    }
+  </style>
+  <div class="wrap">
+    <div class="contain">
+      <div class="camping box">
+        <div>
+          <h1>캠핑</h1>
+          <p>바로가기</p>
+        </div>
+      </div>
+      <div class="glamping box">
+        <div>
+          <h1>글램핑</h1>
+          <p>바로가기</p>
+        </div>
+      </div>
+      <div class="hotel box">
+        <div>
+          <h1>호텔</h1>
+          <p>바로가기</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
