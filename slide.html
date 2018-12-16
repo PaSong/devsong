@@ -59,25 +59,25 @@
       var list = $('.slide_wr > ul');
       var li_width = $('.slide > .slide_wr > ul li').css('width');
       var length = $('.slide_wr > ul > li').length;
-      var count = 1;
+      var count = 0;
 
       function prv() {
-        count--;
-        var value_prv = parseInt(li_width) * count;
-        console.log(count);
-        console.log(value_prv);
-        list.animate({
-          left: '+=' + value_prv + 'px'
-        });
-
+        if (count > 0) {
+          count--;
+          var value = parseInt(li_width);
+          list.animate({
+            left: - value * count
+          });
+        }
       }
       function next() {
-        var value = parseInt(li_width) * count;
-        list.animate({
-          left: '-=' + value + 'px'
-        });
-        count++;
-
+        if (count < li_width.length - 1) {
+          var value = parseInt(li_width);
+          list.animate({
+            left: -value * count
+          });
+          count++;
+        }
         console.log(count);
       }
 
