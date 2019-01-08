@@ -48,8 +48,8 @@
   
 
     function presentCalendar(){
-      var first = new Date(today.getFullYear(), today.getMonth(), 1);
-      var last = new Date(today.getFullYear(), today.getMonth()+1,0);
+      var first = new Date(today.getFullYear(), today.getMonth(), 1); //현재날짜의 1일을 가져오는 변수
+      var last = new Date(today.getFullYear(), today.getMonth()+1,0); // 현재날짜의 마지막일을 가져오는 변수
       var calendar = document.getElementById("calendar");
      
 
@@ -57,13 +57,9 @@
 
      // 그 달의 마지막 날짜만큼 숫자를 출력
       for(i = 0; i < last.getDate(); i++){
-       document.getElement
-         
-        // document.write((i +1) + "<br>");
+       document.wrght(i);
       }
-      return first; 
-
-      
+      return last
     }
     
     document.getElementById("demo").innerHTML = presentCalendar() ;
