@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    * {list-style:none; margin:0; padding:0;}
+
+    .day  > ul > li {display:inline-block; margin : 20px;}
+  </style>
+  <div id="demo"></div>
+
+  <div class="wrap">
+    <div class="date_wrap">
+      <div class="prv"></div>
+      <div class="today"></div>
+      <div class="next"></div>
+    </div>
+    <div class="calendar">
+      <table id="calendar" border="3" align="center" >
+        <tr>
+          <td>이전달</td>
+          <td colspan="5">현재</td>
+          <td>다음달</td>
+        </tr>
+        <tr>
+          <td>Sun</td>
+          <td>Mon</td>
+          <td>The</td>
+          <td>Wed</td>
+          <td>Thu</td>
+          <td>Fri</td>
+          <td>Sat</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  
+  <script>
+    var today = new Date();
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var days = ["Mon", "Thu", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  
+
+    function presentCalendar(){
+      var first = new Date(today.getFullYear(), today.getMonth(), 1);
+      var last = new Date(today.getFullYear(), today.getMonth()+1,0);
+      var calendar = document.getElementById("calendar");
+     
+
+
+
+     // 그 달의 마지막 날짜만큼 숫자를 출력
+      for(i = 0; i < last.getDate(); i++){
+       document.getElement
+         
+        // document.write((i +1) + "<br>");
+      }
+      return first; 
+
+      
+    }
+    
+    document.getElementById("demo").innerHTML = presentCalendar() ;
+  </script>
+</body>
+</html>
