@@ -27,7 +27,7 @@
           <td colspan="5">현재</td>
           <td>다음달</td>
         </tr>
-        <tr>
+        <tr id="myRow">
           <td>Sun</td>
           <td>Mon</td>
           <td>The</td>
@@ -38,31 +38,37 @@
         </tr>
       </table>
     </div>
+    <div>
+      <button onclick="presentCalendar()">눌러봐</button>
+    </div>
   </div>
-  
-  
+
+
   <script>
     var today = new Date();
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var days = ["Mon", "Thu", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  
+
 
     function presentCalendar(){
       var first = new Date(today.getFullYear(), today.getMonth(), 1); //현재날짜의 1일을 가져오는 변수
       var last = new Date(today.getFullYear(), today.getMonth()+1,0); // 현재날짜의 마지막일을 가져오는 변수
       var calendar = document.getElementById("calendar");
-     
+
 
 
 
      // 그 달의 마지막 날짜만큼 숫자를 출력
       for(i = 0; i < last.getDate(); i++){
-       document.wrght(i);
+        var row = document.getElementById("myRow");
+        var create = row.insertCell(0);
+
+        create.innerHTML = i ;
       }
-      return last
+
     }
-    
-    document.getElementById("demo").innerHTML = presentCalendar() ;
+
+   // document.getElementById("demo").innerHTML = presentCalendar() ;
   </script>
 </body>
 </html>
